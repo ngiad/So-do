@@ -1,0 +1,12 @@
+.HomePlayout > .container{
+    display: flex;
+}
+
+.HomePlayout > .container > .FilterBar{
+    flex: 1;
+}
+
+
+.HomePlayout > .container > .content{
+    flex: 6;
+}

@@ -1,0 +1,19 @@
+.FilterBar{
+    padding: 16px;
+    border-right: 2px solid #ccc;
+    position: sticky;
+    top: 0;
+}
+
+.FilterBar > .option{
+    padding: 4px 0;
+    border-bottom: 2px solid #333 ;
+}
+
+.option_content{
+    display: none;
+}
+
+.block{
+    display: block !important;
+}
