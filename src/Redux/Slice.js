@@ -4,7 +4,8 @@ export const Item = createSlice({
     name : "Item",
     initialState : {
         data : [],
-        page : 1
+        page : 0,
+        search : "",
     },
     reducers:{
         update : (state,action) => {

@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import Request_base from "../../utils/request";
 import { update } from "../../Redux/Slice";
 
-const BtnAddItem = () => {
+const BtnAddItem =  () => {
   const [loading, setloading] = useState(false);
   const Item = useSelector((state) => state.Item);
   const navigate = useNavigate();
@@ -15,11 +15,11 @@ const BtnAddItem = () => {
     try {
       setloading(true);
       const res = await Request_base.get(
-        `loaicongbo?paginate=true&page=${Item.page}&perpage=18`
+        `loaicongbo?paginate=true&page=${Item.page + 1}&perpage=18`
       );
       const data = await res.data;
       dispatch(
-        update({ ...Item, data: [...Item.data, ...data.list], page: Item.page })
+        update({ ...Item, data: [...Item.data, ...data.list], page: Item.page + 1})
       );
     } catch (error) {
       navigate("/error");
@@ -28,11 +28,8 @@ const BtnAddItem = () => {
     }
   };
 
-  const HandleAddItem = async () => {
-    dispatch(
-      update({ ...Item, page: Item.page + 1 })
-    );
 
+  const HandleAddItem = async () => {
     GetData()
   };
 
