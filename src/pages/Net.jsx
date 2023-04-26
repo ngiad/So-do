@@ -42,6 +42,8 @@ const Net = () => {
     </div>
   })
 
+  console.log(RenderItem);
+
 
   return (
     <div className='content'>
